@@ -37,7 +37,7 @@ export const signInWithGoogleRedirect = () =>
 
 export const db = getFirestore();
 
-export const creatUserDocumentFromAuth = async (
+export const createUserDocumentFromAuth = async (
   userAuth,
   additionalInfo = {}
 ) => {
