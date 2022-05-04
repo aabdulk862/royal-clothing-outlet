@@ -122,6 +122,8 @@ export const CartProvider = ({ children }) => {
     updateCartItemsReducer(newCartItems);
   };
 
+  
+
   const value = {
     isCartOpen,
     setIsCartOpen,
