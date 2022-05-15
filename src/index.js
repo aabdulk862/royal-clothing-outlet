@@ -5,16 +5,13 @@ import { Provider } from "react-redux";
 
 import App from "./App";
 
-import { CartProvider } from "./contexts/cart.context";
 import { store } from "./store/store";
 import "./index.scss";
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <CartProvider>
-        <App />
-      </CartProvider>
+      <App />
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
