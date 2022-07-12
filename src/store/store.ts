@@ -1,5 +1,5 @@
 import { compose, createStore, applyMiddleware, Middleware } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistStore, persistReducer, PersistConfig } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
@@ -15,10 +15,14 @@ declare global{
   }
 }
 
-const persistConfig = {
+type ExtendedPersistConfig = PersistConfig<RootState> & {
+  whitelist: (keyof RootState)[]
+}
+
+const persistConfig: ExtendedPersistConfig = {
   key: 'root',
   storage,
-  blacklist: ['user'],
+  whitelist: ['cart'],
 };
 
 const sagaMiddleware = createSagaMiddleware();
